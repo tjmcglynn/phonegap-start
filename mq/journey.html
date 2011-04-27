@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Waypoints</title>
+    <script>
+function serialize(a) {
+  var s = [];
+      var i = 0;
+      while (a[i].value != "") {
+      s.push(a[i].name + "=" + encodeURIComponent(a[i].value));
+      i++;
+      }
+      
+  return s.join("&");
+}
+
+function getDirections(f) {
+      req = serialize(f.elements);
+      alert(req);
+}
+    </script>
+  </head>
+
+  <body>
+    <h1>Waypoints</h1>
+
+    <form onSubmit="getDirections(this)">
+      <input type="text" size="20" name="from" placeholder="From" value="43 South St., Shrewsbury, MA"></input><br />
+      <input type="text" name="to" placeholder="To" value="212 S. Quinsigamond Ave., Shrewsbury, MA"></input><br />
+	<input type="text" name="to" placeholder="To (optional)"></input><br />
+      <input type="text" name="to" placeholder="To (optional)"></input><br />
+      <input type="text" name="to" placeholder="To (optional)"></input><br />
+      <input type="text" name="to" placeholder="To (optional)"></input><br />
+      <input type="text" name="to" placeholder="To (optional)"></input><br />
+      <input type="text" name="to" placeholder="To (optional)"></input><br />
+      <input type="text" name="to" placeholder="To (optional)"></input><br />
+      <input type="text" name="to" placeholder="To (optional)"></input><br />
+			  <input type="submit"></input>
+    </form>
+
+    <hr>
+    <address><a href="mailto:tmcglynn@SOMAA00981"></a></address>
+<!-- Created: Tue Apr 19 19:44:58 Eastern Daylight Time 2011 -->
+<!-- hhmts start -->
+Last modified: Wed Apr 20 17:55:40 Eastern Daylight Time 2011
+<!-- hhmts end -->
+  </body>
+</html>

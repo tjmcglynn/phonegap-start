@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+    <div id="narrative"></div>
+<script>
+function renderNarrative(response) {
+    var legs = response.route.legs;
+    var html = '';
+    var i = 0;
+    var j = 0;
+    var trek;
+    var maneuver;
+    
+    html += '<dl>'
+    
+    for (; i < legs.length; i++) {
+        for (j = 0; j < legs[i].maneuvers.length; j++) {
+	    maneuver = legs[i].maneuvers[j];
+            
+            html += '<dt>' + maneuver.narrative + '</dt>'
+	    // unit is miles.
+            html += '<dd>' + maneuver.distance.toFixed(1) + '</dd>'
+        }
+    }
+    
+    html += '</dl>';
+    
+    document.getElementById('narrative').style.display = "";
+    document.getElementById('narrative').innerHTML = html;
+}
+</script>
+      <script src="http://www.mapquestapi.com/directions/v1/route?key=Fmjtd|luu22quyl9%2C2n%3Do5-h6awg&from=Lancaster,PA&to=York,PA&callback=renderNarrative"></script>
+
+    <h1></h1>
+
+
+    <hr>
+    <address><a href="mailto:tmcglynn@SOMAA00981"></a></address>
+<!-- Created: Tue Apr 19 18:08:58 Eastern Daylight Time 2011 -->
+<!-- hhmts start -->
+Last modified: Tue Apr 19 18:21:12 Eastern Daylight Time 2011
+<!-- hhmts end -->
+  </body>
+</html>
